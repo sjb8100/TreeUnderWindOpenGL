@@ -48,10 +48,10 @@ namespace TreeForDen
         {
             Gl.glClear(Gl.GL_COLOR_BUFFER_BIT | Gl.GL_DEPTH_BUFFER_BIT);
             Gl.glLoadIdentity();
-            Gl.glColor3f(1.0f, 0, 0);
+            Gl.glColor3f(0.5f, 0, 0);
             Gl.glPushMatrix();
             Gl.glTranslated(0, 0, -6);
-            Gl.glRotated(45, 1, 1, 0);
+            Gl.glRotated(75, 1, 1, 0);
 
             Glut.glutWireSphere(2, 32, 32);
             Gl.glPopMatrix();
