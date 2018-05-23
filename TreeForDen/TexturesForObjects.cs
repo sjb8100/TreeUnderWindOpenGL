@@ -26,39 +26,39 @@ namespace TreeForDen
             return mGlTextureObject;
         }
         // загрузка текстуры 
-        public void LoadTextureForModel(string FileName)
-        { // запоминаем имя файла 
-            texture_name = FileName;
-            // создаем изображение с идентификатором  imageId 
-            Il.ilGenImages(1, out imageId);
-            // делаем изображение текущим 
-            Il.ilBindImage(imageId); string url = "";
-            // получаем адрес текущей директории 
-            url = Directory.GetCurrentDirectory(); url += "";
-            // добавляем имя текстуры 
-            url += texture_name;
-            // если загрузка удалась 
-            if (Il.ilLoadImage(url))
-            {
-                // если загрузка прошла успешно 
-                // сохраняем размеры изображения 
-                int width = Il.ilGetInteger(Il.IL_IMAGE_WIDTH);
-                int height = Il.ilGetInteger(Il.IL_IMAGE_HEIGHT);
-                // определяем число бит на пиксель 
-                int bitspp = Il.ilGetInteger(Il.IL_IMAGE_BITS_PER_PIXEL);
-                switch (bitspp)
-                // в зависимости от полученного результата 
-                {
-                    // создаем текстуру используя режим GL_RGB или GL_RGBA 
-                    case 24: mGlTextureObject = MakeGlTexture(Gl.GL_RGB, Il.ilGetData(), width, height);
-                        break;
-                    case 32: mGlTextureObject = MakeGlTexture(Gl.GL_RGBA, Il.ilGetData(), width, height);
-                        break;
-                }
-                // очищаем память 
-                Il.ilDeleteImages(1, ref imageId);
-            }
-        }
+        //public void LoadTextureForModel(string FileName)
+        //{ // запоминаем имя файла 
+        //    texture_name = FileName;
+        //    // создаем изображение с идентификатором  imageId 
+        //    Il.ilGenImages(1, out imageId);
+        //    // делаем изображение текущим 
+        //    Il.ilBindImage(imageId); string url = "";
+        //    // получаем адрес текущей директории 
+        //    url = Directory.GetCurrentDirectory(); url += "";
+        //    // добавляем имя текстуры 
+        //    url += texture_name;
+        //    // если загрузка удалась 
+        //    if (Il.ilLoadImage(url))
+        //    {
+        //        // если загрузка прошла успешно 
+        //        // сохраняем размеры изображения 
+        //        int width = Il.ilGetInteger(Il.IL_IMAGE_WIDTH);
+        //        int height = Il.ilGetInteger(Il.IL_IMAGE_HEIGHT);
+        //        // определяем число бит на пиксель 
+        //        int bitspp = Il.ilGetInteger(Il.IL_IMAGE_BITS_PER_PIXEL);
+        //        switch (bitspp)
+        //        // в зависимости от полученного результата 
+        //        {
+        //            // создаем текстуру используя режим GL_RGB или GL_RGBA 
+        //            case 24: mGlTextureObject = MakeGlTexture(Gl.GL_RGB, Il.ilGetData(), width, height);
+        //                break;
+        //            case 32: mGlTextureObject = MakeGlTexture(Gl.GL_RGBA, Il.ilGetData(), width, height);
+        //                break;
+        //        }
+        //        // очищаем память 
+        //        Il.ilDeleteImages(1, ref imageId);
+        //    }
+        //}
         // создание текстуры в памяти openGL 
         private static uint MakeGlTexture(int Format, IntPtr pixels, int w, int h)
         {
