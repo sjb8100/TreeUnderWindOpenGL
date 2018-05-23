@@ -66,61 +66,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataStore.cs" />
-    <Compile Include="Face.cs" />
-    <Compile Include="FaceParser.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Group.cs" />
-    <Compile Include="GroupParser.cs" />
-    <Compile Include="IDataStore.cs" />
-    <Compile Include="IElementGroup.cs" />
-    <Compile Include="IFaceGroup.cs" />
-    <Compile Include="IFaceParser.cs" />
-    <Compile Include="IGroupDataStore.cs" />
-    <Compile Include="IGroupParser.cs" />
-    <Compile Include="IMaterialLibrary.cs" />
-    <Compile Include="IMaterialLibraryLoader.cs" />
-    <Compile Include="IMaterialLibraryLoaderFacade.cs" />
-    <Compile Include="IMaterialLibraryParser.cs" />
-    <Compile Include="INormalDataStore.cs" />
-    <Compile Include="INormalParser.cs" />
-    <Compile Include="IObjLoader.cs" />
-    <Compile Include="IObjLoaderFactory.cs" />
-    <Compile Include="ITextureDataStore.cs" />
-    <Compile Include="ITextureParser.cs" />
-    <Compile Include="ITypeParser.cs" />
-    <Compile Include="IUseMaterialParser.cs" />
-    <Compile Include="IVertexDataStore.cs" />
-    <Compile Include="IVertexParser.cs" />
-    <Compile Include="Limb.cs" />
-    <Compile Include="LoaderBase.cs" />
-    <Compile Include="LoadResult.cs" />
-    <Compile Include="Material.cs" />
-    <Compile Include="MaterialLibraryLoader.cs" />
-    <Compile Include="MaterialLibraryLoaderFacade.cs" />
-    <Compile Include="MaterialLibraryParser.cs" />
-    <Compile Include="MaterialStreamProvider.cs" />
-    <Compile Include="Normal.cs" />
-    <Compile Include="NormalParser.cs" />
-    <Compile Include="ObjLoader.cs" />
-    <Compile Include="ObjLoaderFactory.cs" />
     <Compile Include="OpenGLControl.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StringExtensions.cs" />
-    <Compile Include="Texture.cs" />
-    <Compile Include="TextureParser.cs" />
-    <Compile Include="TexturesForObjects.cs" />
-    <Compile Include="TypeParserBase.cs" />
-    <Compile Include="UseMaterialParser.cs" />
-    <Compile Include="Vec3.cs" />
-    <Compile Include="Vertex.cs" />
-    <Compile Include="VertexParser.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
