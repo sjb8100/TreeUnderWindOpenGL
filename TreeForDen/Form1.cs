@@ -62,6 +62,7 @@ namespace TreeForDen
 
             Gl.glVertex2d(2, 6);
 
+
             //завершаем режим рисования
             Gl.glEnd();
             //дожидаемся конца визуализации
