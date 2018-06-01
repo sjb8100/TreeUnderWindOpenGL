@@ -14,6 +14,7 @@ namespace TreeForDen
 {
     public partial class Form1 : Form
     {
+
         public Form1()
         {
             InitializeComponent();
@@ -32,11 +33,18 @@ namespace TreeForDen
             // настройка проекции 
             Gl.glMatrixMode(Gl.GL_PROJECTION);
             Gl.glLoadIdentity();
-            Glu.gluPerspective(45, (float)SOGIControl.Width / (float)SOGIControl.Height, 0.1, 200);
+            
+            if ((float)SOGIControl.Width <= (float)SOGIControl.Height)
+            {
+                Glu.gluOrtho2D(0.0, 30.0 * (float)SOGIControl.Height / (float)SOGIControl.Width, 0.0, 30.0);
+            }
+            else
+            {
+                Glu.gluOrtho2D(0.0, 30.0 * (float)SOGIControl.Width / (float)SOGIControl.Height, 0.0, 30.0);
+            }
+
             Gl.glMatrixMode(Gl.GL_MODELVIEW);
             Gl.glLoadIdentity();
-            // настройка параметров OpenGL для визуализации 
-            Gl.glEnable(Gl.GL_DEPTH_TEST); 
         }
 
         private void SOGIControl_Load(object sender, EventArgs e)
@@ -46,22 +54,44 @@ namespace TreeForDen
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Gl.glClear(Gl.GL_COLOR_BUFFER_BIT | Gl.GL_DEPTH_BUFFER_BIT);
+            Gl.glClear(Gl.GL_COLOR_BUFFER_BIT);
             Gl.glLoadIdentity();
-            Gl.glColor3f(0.5f, 0, 0);
-            Gl.glPushMatrix();
-            Gl.glTranslated(0, 0, -6);
-            Gl.glRotated(75, 1, 1, 0);
+            Gl.glColor3f(255, 0, 0);
 
-            Glut.glutWireSphere(2, 32, 32);
-            Gl.glPopMatrix();
+            Gl.glBegin(Gl.GL_LINE_STRIP);
+
+            Gl.glVertex2d(2, 6);
+
+            //завершаем режим рисования
+            Gl.glEnd();
+            //дожидаемся конца визуализации
             Gl.glFlush();
+            //посылаем сигнал перерисовки элемента
             SOGIControl.Invalidate();
+
         }
+
+        private void drawTree()
+        {
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
 
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
