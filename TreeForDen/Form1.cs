@@ -14,12 +14,23 @@ namespace TreeForDen
 {
     public partial class Form1 : Form
     {
-
         public Form1()
         {
             InitializeComponent();
             SOGIControl.InitializeContexts();
         }
+
+        double ScreenW, ScreenH;
+        private float devX;
+        private float devY;
+
+        private float[,] GrapValuesArray;
+        private int element_count = 0;
+        private bool not_calculate = true;
+
+        private int pointPosition = 0;
+        float lineX, lineY;
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -60,7 +71,22 @@ namespace TreeForDen
 
             Gl.glBegin(Gl.GL_LINE_STRIP);
 
-            Gl.glVertex2d(2, 6);
+            //если одно значение, то это будет точка
+            //два значения - одно начальное, другое конечное
+            //по ним рисуется линия
+
+            Gl.glVertex2d(15, 0);
+            Gl.glVertex2d(15, 5);
+
+            for (int i=0; i<15; i+=5)
+            {
+                Gl.glVertex2d(15 + i, 0 + i);
+                Gl.glVertex2d(15 + i, 5 + i);
+                Gl.glVertex2d(15 - i, 10 - i);
+                Gl.glVertex2d(10, 15);
+            }
+
+
 
 
             //завершаем режим рисования
@@ -72,10 +98,20 @@ namespace TreeForDen
 
         }
 
-        private void drawTree()
+        private void drawTree(float x1, float y1, int numberiteration)
         {
             try
             {
+                float x2 = (float)(x1 + Math.Cos(Math.PI / 180))/5;
+                float y2 = (float)(y1 + Math.Sin(Math.PI / 180))/5;
+
+                while(numberiteration>0)
+                {
+                    Gl.glVertex2d(x2, y2);
+
+                    drawTree(x2, y2, numberiteration);
+                    numberiteration--;
+                }
 
             }
             catch (Exception ex)
@@ -92,6 +128,13 @@ namespace TreeForDen
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            //pointlgrap
+
 
         }
     }

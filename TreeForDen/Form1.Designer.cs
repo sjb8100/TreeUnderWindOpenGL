@@ -42,7 +42,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.trackBar3 = new System.Windows.Forms.TrackBar();
             this.trackBar4 = new System.Windows.Forms.TrackBar();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.PointlnGrap = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -202,6 +202,11 @@
             this.trackBar4.TabIndex = 10;
             this.trackBar4.Value = 1;
             // 
+            // PointlnGrap
+            // 
+            this.PointlnGrap.Interval = 30;
+            this.PointlnGrap.Tick += new System.EventHandler(this.Timer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -241,7 +246,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TrackBar trackBar3;
         private System.Windows.Forms.TrackBar trackBar4;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer PointlnGrap;
     }
 }
 
