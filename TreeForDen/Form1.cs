@@ -44,7 +44,7 @@ namespace TreeForDen
             // настройка проекции 
             Gl.glMatrixMode(Gl.GL_PROJECTION);
             Gl.glLoadIdentity();
-            
+
             if ((float)SOGIControl.Width <= (float)SOGIControl.Height)
             {
                 Glu.gluOrtho2D(0.0, 30.0 * (float)SOGIControl.Height / (float)SOGIControl.Width, 0.0, 30.0);
@@ -78,16 +78,13 @@ namespace TreeForDen
             Gl.glVertex2d(15, 0);
             Gl.glVertex2d(15, 5);
 
-            for (int i=0; i<15; i+=5)
+
+            for (int i =0;i<10;i++)
             {
-                Gl.glVertex2d(15 + i, 0 + i);
-                Gl.glVertex2d(15 + i, 5 + i);
-                Gl.glVertex2d(15 - i, 10 - i);
-                Gl.glVertex2d(10, 15);
+                Gl.glVertex2d(14 -i, 6+i);
             }
 
-
-
+            //drawTree(15, 10);
 
             //завершаем режим рисования
             Gl.glEnd();
@@ -95,29 +92,36 @@ namespace TreeForDen
             Gl.glFlush();
             //посылаем сигнал перерисовки элемента
             SOGIControl.Invalidate();
-
         }
 
-        private void drawTree(float x1, float y1, int numberiteration)
+        private float[] drawTree(float x1, float y1)
         {
-            try
-            {
-                float x2 = (float)(x1 + Math.Cos(Math.PI / 180))/5;
-                float y2 = (float)(y1 + Math.Sin(Math.PI / 180))/5;
+            float[] ArrayOfXY = new float[2];
+                ArrayOfXY[0] = x1;
+                ArrayOfXY[1] = y1;
 
-                while(numberiteration>0)
+                if (x1>1 && y1<29)
                 {
-                    Gl.glVertex2d(x2, y2);
+                    //float x2 = (float)(x1 - Math.Cos(20));
+                    //float y2 = (float)(y1 + Math.Cos(20));
 
-                    drawTree(x2, y2, numberiteration);
-                    numberiteration--;
+                    float x2 = x1 - 1;
+                    float y2 = y1 + 1;
+
+                    Gl.glVertex2d(x2, y2);
+                    ArrayOfXY[0] = x2;
+                    ArrayOfXY[1] = y2;
+
+                return ArrayOfXY;
+
+                }
+                else
+                {
+                    ArrayOfXY[0] = float.MinValue;
+                    ArrayOfXY[1] = float.MinValue;
+                    return ArrayOfXY;
                 }
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
         }
 
 
