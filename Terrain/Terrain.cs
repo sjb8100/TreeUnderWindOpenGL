@@ -79,7 +79,7 @@ namespace Terrain {
 					RandomMap[x, y] = merged;
 				}
 			}
-		}
+        }
 
 		private void BuildHeightmap() {
             Bitmap bmp = new Bitmap(Assembly.GetEntryAssembly().GetManifestResourceStream("Terrain.Assets.HEIGHTMAP_2_1024.jpg"));
@@ -99,10 +99,10 @@ namespace Terrain {
 
                     float distance = (float)Math.Abs(Math.Sqrt(Math.Pow(center.X - x, 2) + Math.Pow(center.Y - y, 2)));
                     float attenuation = 0.3f;
-                    float influence = 1f - (distance / (width / 2f)) * attenuation;
+                    float influence = 1f - (distance / (width / 2f)) * attenuation * 2;
                     Heightmap[x, y] = (color.R + color.B + color.G) * 1.2f * influence;
 
-                     float affect = -1f * (float)Math.Log(distance/ 650 + .1f);
+                     float affect = -1f * (float)Math.Log(distance/ 650 + .1f) + 0.4f;
 
                     Heightmap[x, y] *= affect;
 
