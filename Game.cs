@@ -25,7 +25,11 @@ namespace Terrain {
 
 		private Game() : base(1280, 720) {
 			VSync = VSyncMode.On;
+<<<<<<< HEAD
 			Title = "Курсовая работа. Ландшафт";
+=======
+			Title = "Курсовая работа по проектированию ландшафта";
+>>>>>>> c76543ed2092a31cff016f1d46bb73695c6e9c83
 
 			camera = AddObject(Camera.Instance);
 			terrain = AddObject(Terrain.Instance);

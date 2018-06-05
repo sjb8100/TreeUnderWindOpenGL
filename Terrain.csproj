@@ -111,11 +111,15 @@
   <ItemGroup>
     <Content Include="Assets\32b34d588dc3915f2221c7cdb54881af.jpg" />
     <Content Include="Assets\5275-heightmap-test.png" />
+<<<<<<< HEAD
     <Content Include="Assets\6Sox7mF.png" />
     <Content Include="Assets\e7d0O.png" />
     <Content Include="Assets\example.bmp" />
     <Content Include="Assets\fbm.png" />
     <Content Include="Assets\images.jpg" />
+=======
+    <Content Include="Assets\e7d0O.png" />
+>>>>>>> c76543ed2092a31cff016f1d46bb73695c6e9c83
     <Content Include="Assets\mytyy_pesok.jpg" />
     <Content Include="Assets\ocean_s_800x600.jpg" />
     <Content Include="Assets\result2.png" />
