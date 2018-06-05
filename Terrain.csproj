@@ -109,11 +109,19 @@
     <EmbeddedResource Include="Assets\HEIGHTMAP_3_1024.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\32b34d588dc3915f2221c7cdb54881af.jpg" />
     <Content Include="Assets\5275-heightmap-test.png" />
+    <Content Include="Assets\6Sox7mF.png" />
+    <Content Include="Assets\e7d0O.png" />
+    <Content Include="Assets\example.bmp" />
+    <Content Include="Assets\fbm.png" />
+    <Content Include="Assets\images.jpg" />
     <Content Include="Assets\mytyy_pesok.jpg" />
     <Content Include="Assets\ocean_s_800x600.jpg" />
+    <Content Include="Assets\result2.png" />
     <Content Include="Assets\terrain.png" />
     <Content Include="Assets\the-world-bank-publishes-updated-figures-on-the-economic-loss-caused-by-overfishing_306x306_87878.png" />
+    <Content Include="Assets\tilesB2.jpg" />
     <Content Include="Assets\WATER12.jpg" />
   </ItemGroup>
 </Project>
