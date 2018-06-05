@@ -112,6 +112,7 @@
     <Content Include="Assets\5275-heightmap-test.png" />
     <Content Include="Assets\mytyy_pesok.jpg" />
     <Content Include="Assets\ocean_s_800x600.jpg" />
+    <Content Include="Assets\terrain.png" />
     <Content Include="Assets\the-world-bank-publishes-updated-figures-on-the-economic-loss-caused-by-overfishing_306x306_87878.png" />
     <Content Include="Assets\WATER12.jpg" />
   </ItemGroup>
